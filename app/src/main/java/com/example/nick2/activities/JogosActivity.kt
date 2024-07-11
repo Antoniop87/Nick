@@ -8,6 +8,7 @@ import android.widget.GridView
 import android.widget.Toast
 import com.example.nick2.R
 import com.example.nick2.activities.jogos.AcerteAFrutaActivity
+import com.example.nick2.activities.jogos.SomaActivity
 import com.example.nick2.adapter.MyGridAdapter
 import com.example.nick2.model.Item
 
@@ -30,7 +31,7 @@ class JogosActivity : AppCompatActivity() {
     fun configuraGridView() {
         val items = listOf(
             Item("Acerte a fruta", R.drawable.ic_launcher_background),
-            Item("Item 2", R.drawable.ic_launcher_background),
+            Item("Soma", R.drawable.numero_tres),
             Item("Item 3", R.drawable.ic_launcher_background),
         )
 
@@ -43,8 +44,8 @@ class JogosActivity : AppCompatActivity() {
 
 
             val intent = when (item.name) {
-                "Item 1" -> Intent(this, AcerteAFrutaActivity::class.java)
-                "Item 2" -> Intent(this, AcerteAFrutaActivity::class.java)
+                "Acerte a fruta" -> Intent(this, AcerteAFrutaActivity::class.java)
+                "Soma" -> Intent(this, SomaActivity::class.java)
                 else -> Intent(this, AcerteAFrutaActivity::class.java)
             }
 
