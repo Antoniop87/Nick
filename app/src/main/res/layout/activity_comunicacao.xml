@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_main"
-    android:orientation="vertical"
-    tools:context=".activities.JogosActivity">
+    android:background="@color/background_comunicacao"
+    tools:context=".activities.comunicacao.ComunicacaoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,27 +49,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Jogos Educacionais"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:textSize="26sp"/>
-
-    <GridView
-        android:id="@+id/gridView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="2"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
-        android:stretchMode="columnWidth"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="10dp"
-        />
 
 </LinearLayout>
