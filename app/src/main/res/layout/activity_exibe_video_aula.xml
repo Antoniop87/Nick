@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FB7A6B"
-    android:orientation="vertical"
-    tools:context=".activities.jogos.JogosActivity">
+    android:background="@color/background_main"
+    tools:context=".activities.videoAula.ExibeVideoAulaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tool_bar"
@@ -15,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/red_btn">
+        android:background="@color/blue">
 
         <ImageView
             android:id="@+id/btn_fechar"
@@ -29,9 +28,10 @@
             />
 
         <TextView
+            android:id="@+id/tv_titulo_video_aula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jogos"
+            android:text="Video aula"
             android:gravity="center"
             android:textSize="24sp"
             android:layout_marginTop="14dp"
@@ -44,33 +44,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
+    <WebView
+        android:id="@+id/wv_exibe_video"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/rounded_image"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar">
-
-        <GridView
-            android:id="@+id/gridView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="1"
-            android:horizontalSpacing="10dp"
-            android:verticalSpacing="10dp"
-            android:stretchMode="columnWidth"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginHorizontal="10dp"
-            />
-
-    </LinearLayout>
-
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

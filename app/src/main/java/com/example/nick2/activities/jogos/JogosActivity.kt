@@ -1,4 +1,4 @@
-package com.example.nick2.activities
+package com.example.nick2.activities.jogos
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,18 +6,15 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.ImageView
-import android.widget.Toast
 import com.example.nick2.R
-import com.example.nick2.activities.jogos.AcerteAFrutaActivity
-import com.example.nick2.activities.jogos.NomeFrutaActivity
-import com.example.nick2.activities.jogos.SomaActivity
 import com.example.nick2.adapter.MyGridAdapter
 import com.example.nick2.model.Item
 
 class JogosActivity : AppCompatActivity() {
 
-    lateinit var gridView: GridView
     lateinit var btn_fechar: ImageView
+    lateinit var gridView: GridView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +32,9 @@ class JogosActivity : AppCompatActivity() {
 
     private fun configuraGridView() {
         val items = listOf(
-            Item("Acerte a fruta", R.drawable.ic_launcher_background),
+            Item("Acerte a fruta", R.drawable.uva),
             Item("Soma", R.drawable.numero_tres),
-            Item("Comida do macaco", R.drawable.capa_macaco),
+            Item("Comida", R.drawable.capa_macaco),
         )
 
         val adapter = MyGridAdapter(this, items)

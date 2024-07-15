@@ -3,14 +3,11 @@ package com.example.nick2.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
-import android.widget.GridView
 import android.widget.LinearLayout
-import android.widget.Toast
 import com.example.nick2.R
+import com.example.nick2.activities.videoAula.VideoAulaActivity
 import com.example.nick2.activities.comunicacao.ComunicacaoActivity
-import com.example.nick2.adapter.MyGridAdapter
-import com.example.nick2.model.Item
+import com.example.nick2.activities.jogos.JogosActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_video_aula.setOnClickListener {
-            Toast.makeText(this@MainActivity, "video aula", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, VideoAulaActivity::class.java))
         }
 
     }

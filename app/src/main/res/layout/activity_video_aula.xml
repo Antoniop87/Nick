@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FB7A6B"
-    android:orientation="vertical"
-    tools:context=".activities.jogos.JogosActivity">
+    android:background="@color/background_main"
+    tools:context=".activities.videoAula.VideoAulaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tool_bar"
@@ -15,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/red_btn">
+        android:background="@color/blue">
 
         <ImageView
             android:id="@+id/btn_fechar"
@@ -31,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jogos"
+            android:text="Video aula"
             android:gravity="center"
             android:textSize="24sp"
             android:layout_marginTop="14dp"
@@ -44,6 +43,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="600dp"
@@ -51,7 +51,7 @@
         android:background="@drawable/rounded_image"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tool_bar">
@@ -70,7 +70,5 @@
             />
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

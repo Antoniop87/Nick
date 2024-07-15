@@ -4,7 +4,7 @@
     android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/btn_background"
-    android:backgroundTint="@color/red_btn">
+    android:backgroundTint="@color/green_btn">
 
     <TextView
         android:id="@+id/textView"
@@ -16,7 +16,6 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="sans-serif-medium"
-        app:layout_constraintEnd_toStartOf="@id/imageView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,9 +25,7 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="80dp"
-        
-        android:breakStrategy="high_quality"
-        android:hyphenationFrequency="full"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
