@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/background"
-    tools:context=".activities.jogos.SomaActivity">
+    tools:context=".activities.jogos.NomeFrutaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Vamos somar!"
+        android:text="Vamos pensar!"
         android:gravity="center"
         android:textColor="@color/white"
         android:fontFamily="sans-serif"
@@ -65,14 +65,14 @@
         android:layout_width="320dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:src="@drawable/matematica"
-        android:layout_marginTop="40dp"
+        android:src="@drawable/macaco"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rounded_image"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Qual a soma de 2 + 3?"
+        android:text="Qual dessas frutas é a favorita do macaco?"
         android:gravity="center"
         android:textSize="36sp"
         android:layout_marginTop="20dp"
@@ -81,42 +81,27 @@
         android:textStyle="bold"
         />
 
-    <Button
-        android:id="@+id/btn_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:text="7"
-        android:textSize="26sp"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/white"
-        android:stateListAnimator="@animator/btn_animator"
-        />
+    <ImageView
+        android:id="@+id/iv_uva"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/uva"/>
 
-    <Button
-        android:id="@+id/btn_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:text="5"
-        android:textSize="26sp"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/white"
-        />
-
-    <Button
-        android:id="@+id/btn_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:text="3"
-        android:textSize="26sp"
-        android:textStyle="normal"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/white"
-        />
+    <ImageView
+        android:id="@+id/iv_morango"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/morango"/>
+    <ImageView
+        android:id="@+id/iv_banana"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/banana"/>
 
 </LinearLayout>

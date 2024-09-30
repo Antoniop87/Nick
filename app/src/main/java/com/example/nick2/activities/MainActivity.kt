@@ -3,51 +3,46 @@ package com.example.nick2.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AdapterView
-import android.widget.GridView
-import android.widget.Toast
+import android.widget.LinearLayout
 import com.example.nick2.R
-import com.example.nick2.adapter.MyGridAdapter
-import com.example.nick2.model.Item
+import com.example.nick2.activities.videoAula.VideoAulaActivity
+import com.example.nick2.activities.comunicacao.ComunicacaoActivity
+import com.example.nick2.activities.jogos.JogosActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var gridView: GridView
+    private lateinit var btn_jogos: LinearLayout
+    private lateinit var btn_comunicacao: LinearLayout
+    private lateinit var btn_video_aula: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initViews()
-        configuraGridView()
+        configuraButtons()
 
     }
 
-    fun initViews(){
-       gridView = findViewById(R.id.gridView)
+    private fun initViews() {
+        btn_jogos = findViewById(R.id.ll_jogos)
+        btn_comunicacao = findViewById(R.id.ll_comunicacao)
+        btn_video_aula = findViewById(R.id.ll_video_aula)
     }
 
-    fun configuraGridView(){
-        val items = listOf(
-            Item("Item 1", R.drawable.ic_launcher_background),
-            Item("Item 2", R.drawable.ic_launcher_background),
-            Item("Item 3", R.drawable.ic_launcher_background),
-            )
+    private fun configuraButtons() {
 
-        val adapter = MyGridAdapter(this, items)
-        gridView.adapter = adapter
-
-        gridView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            val item = items[position]
-
-
-            val intent = when (item.name) {
-                "Item 1" -> Intent(this, JogosActivity::class.java)
-                "Item 2" -> Intent(this, JogosActivity::class.java)
-                else -> Intent(this, JogosActivity::class.java) // Atividade padrão se necessário
-            }
-
-            startActivity(intent)
+        btn_jogos.setOnClickListener {
+            startActivity(Intent(this, JogosActivity::class.java))
         }
+
+        btn_comunicacao.setOnClickListener {
+            startActivity(Intent(this, ComunicacaoActivity::class.java))
+        }
+
+        btn_video_aula.setOnClickListener {
+            startActivity(Intent(this, VideoAulaActivity::class.java))
+        }
+
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.nick2.activities.jogos
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,6 +48,7 @@ class SomaActivity : AppCompatActivity() {
     private fun configuraBtns(){
         val red = ContextCompat.getColor(this, R.color.red)
         val green = ContextCompat.getColor(this, R.color.green)
+        val i = Intent(this, SucessoActivity::class.java)
 
         btn_1.setOnTouchListener { v, event ->
             when (event.action) {
@@ -77,7 +79,8 @@ class SomaActivity : AppCompatActivity() {
                 }
             }
             count++
-            Toast.makeText(this@SomaActivity, "Teste", Toast.LENGTH_LONG).show()
+            startActivity(i)
+            finish()
             v.performClick()
             true
         }

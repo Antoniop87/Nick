@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/btn_background"
-    android:backgroundTint="@color/red_btn">
+    android:backgroundTint="@color/green_btn">
 
     <TextView
         android:id="@+id/textView"
@@ -30,5 +30,6 @@
         android:layout_gravity="center"
         android:breakStrategy="high_quality"
         android:hyphenationFrequency="full"
+
         />
 </LinearLayout>

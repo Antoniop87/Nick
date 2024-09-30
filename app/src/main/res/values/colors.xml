@@ -4,4 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#E02B2B</color>
     <color name="green">#3FE052</color>
+    <color name="background">#1F8BDE</color>
+    <color name="background_main">#C4F6EE</color>
+    <color name="background_comunicacao">#F092E1</color>
+    <color name="background_jogos">#F05E52</color>
+    <color name="blue">#01A6F0</color>
+    <color name="yellow">#FFBA01</color>
+    <color name="green_btn">#1EB742</color>
+    <color name="red_btn">#F34F1C</color>
 </resources>
