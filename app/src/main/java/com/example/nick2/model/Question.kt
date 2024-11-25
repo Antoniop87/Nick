@@ -6,7 +6,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Question(
     val text: String,
+    val imagemPergunta: Int,
     val correctAnswer: Int,
-    val imageOptions: List<Int> // IDs das imagens
+    val imageOptions: List<Int>
 ) : Parcelable
 

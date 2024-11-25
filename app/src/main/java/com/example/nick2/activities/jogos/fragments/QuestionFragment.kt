@@ -41,12 +41,14 @@ class QuestionFragment : Fragment() {
 
         // Configure o layout com os dados da pergunta
         val textQuestion = view.findViewById<TextView>(R.id.textQuestion)
+        val imagemPergunta = view.findViewById<ImageView>(R.id.imagemPergunta)
         val option1 = view.findViewById<ImageView>(R.id.option1)
         val option2 = view.findViewById<ImageView>(R.id.option2)
         val option3 = view.findViewById<ImageView>(R.id.option3)
         val option4 = view.findViewById<ImageView>(R.id.option4)
 
         textQuestion.text = question.text
+        imagemPergunta.setImageResource(question.imagemPergunta)
         option1.setImageResource(question.imageOptions[0])
         option2.setImageResource(question.imageOptions[1])
         option3.setImageResource(question.imageOptions[2])

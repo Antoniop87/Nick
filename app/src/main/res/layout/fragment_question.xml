@@ -6,23 +6,43 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    android:background ="@color/white"
+    android:background ="@color/background_main"
     tools:context=".activities.jogos.fragments.QuestionFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textQuestion"
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pergunta?"
-        android:textSize="18sp"
-        android:gravity="center"
-        />
+        android:orientation="vertical"
+        android:background="@color/background_jogos">
+
+        <TextView
+            android:id="@+id/textQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pergunta?"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:gravity="center"
+            />
+
+        <ImageView
+            android:id="@+id/imagemPergunta"
+            android:layout_width="240dp"
+            android:layout_height="200dp"
+            android:src="@drawable/abraco"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <!-- Primeira linha de imagens -->
@@ -37,6 +57,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/abc"
+                android:background="@drawable/rounded_image"
                 android:contentDescription="Alternativa 1"
                 android:layout_margin="8dp"/>
 
@@ -45,6 +66,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/abraco"
+                android:background="@drawable/rounded_image"
                 android:contentDescription="Alternativa 2"
                 android:layout_margin="8dp"/>
         </LinearLayout>
@@ -61,6 +83,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/eu_quero"
+                android:background="@drawable/rounded_image"
                 android:contentDescription="Alternativa 3"
                 android:layout_margin="8dp"/>
 
@@ -69,6 +92,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/numero_tres"
+                android:background="@drawable/rounded_image"
                 android:contentDescription="Alternativa 4"
                 android:layout_margin="8dp"/>
         </LinearLayout>
