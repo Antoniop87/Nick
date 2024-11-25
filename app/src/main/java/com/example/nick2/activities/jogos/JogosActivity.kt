@@ -35,6 +35,7 @@ class JogosActivity : AppCompatActivity() {
             Item("Acerte a fruta", R.drawable.uva),
             Item("Soma", R.drawable.numero_tres),
             Item("Comida", R.drawable.capa_macaco),
+            Item("Teste", R.drawable.eu_quero),
         )
 
         val adapter = MyGridAdapter(this, items)
@@ -48,6 +49,7 @@ class JogosActivity : AppCompatActivity() {
                 val intent = when (item.name) {
                     "Acerte a fruta" -> Intent(this, AcerteAFrutaActivity::class.java)
                     "Soma" -> Intent(this, SomaActivity::class.java)
+                    "Teste" -> Intent(this, AtividadeActivity::class.java)
                     else -> Intent(this, NomeFrutaActivity::class.java)
                 }
 

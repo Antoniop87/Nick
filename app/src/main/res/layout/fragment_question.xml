@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background ="@color/white"
+    tools:context=".activities.jogos.fragments.QuestionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pergunta?"
+        android:textSize="18sp"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Primeira linha de imagens -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/option1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/abc"
+                android:contentDescription="Alternativa 1"
+                android:layout_margin="8dp"/>
+
+            <ImageView
+                android:id="@+id/option2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/abraco"
+                android:contentDescription="Alternativa 2"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+
+        <!-- Segunda linha de imagens -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/option3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/eu_quero"
+                android:contentDescription="Alternativa 3"
+                android:layout_margin="8dp"/>
+
+            <ImageView
+                android:id="@+id/option4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/numero_tres"
+                android:contentDescription="Alternativa 4"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
