@@ -1,5 +1,6 @@
 package com.example.nick2.activities.jogos.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,8 +9,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.nick2.R
+import com.example.nick2.activities.jogos.SucessoActivity
 import com.example.nick2.model.Question
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,6 +28,7 @@ private const val ARG_PARAM2 = "param2"
 class QuestionFragment : Fragment() {
 
     private lateinit var question: Question
+    private var count: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,8 +67,10 @@ class QuestionFragment : Fragment() {
         options.forEachIndexed { index, imageView ->
             imageView.setOnClickListener {
                 if (index == question.correctAnswer) {
-                    goToNextQuestion() // Passa para a próxima pergunta
+                    count++
+                    goToNextQuestion()
                 } else {
+                    imageView.setBackgroundResource(R.drawable.bg_at_red)
                     Toast.makeText(requireContext(), "Resposta errada!", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -79,6 +85,9 @@ class QuestionFragment : Fragment() {
         if (viewPager.currentItem < viewPager.adapter!!.itemCount - 1) {
             viewPager.currentItem = viewPager.currentItem + 1 // Avança para a próxima página
         } else {
+            val i = Intent(requireContext(), SucessoActivity::class.java).putExtra("COUNTCERTAS", count)
+            startActivity(i)
+            requireActivity().finish()
             Toast.makeText(requireContext(), "Você terminou o quiz!", Toast.LENGTH_LONG).show()
         }
     }

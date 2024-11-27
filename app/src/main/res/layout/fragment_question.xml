@@ -3,36 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center"
-    android:background ="@color/background_main"
+    android:background="#E8EEFF"
     tools:context=".activities.jogos.fragments.QuestionFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/background_jogos">
+        >
 
         <TextView
             android:id="@+id/textQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pergunta?"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            style="@style/BorderedText"
+            android:textStyle="bold"
+            android:textSize="22sp"
             android:gravity="center"
+
             />
 
         <ImageView
             android:id="@+id/imagemPergunta"
-            android:layout_width="240dp"
-            android:layout_height="200dp"
+            android:layout_width="280dp"
+            android:layout_height="240dp"
             android:src="@drawable/abraco"
             android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_at_blue"
             />
     </LinearLayout>
 
@@ -54,21 +60,23 @@
 
             <ImageView
                 android:id="@+id/option1"
-                android:layout_width="100dp"
+                android:layout_width="130dp"
                 android:layout_height="100dp"
                 android:src="@drawable/abc"
-                android:background="@drawable/rounded_image"
+                android:background="@drawable/bg_at_blue"
                 android:contentDescription="Alternativa 1"
-                android:layout_margin="8dp"/>
+                android:layout_margin="12dp"
+                android:padding="10dp"/>
 
             <ImageView
                 android:id="@+id/option2"
-                android:layout_width="100dp"
+                android:layout_width="130dp"
                 android:layout_height="100dp"
                 android:src="@drawable/abraco"
-                android:background="@drawable/rounded_image"
+                android:background="@drawable/bg_at_blue"
                 android:contentDescription="Alternativa 2"
-                android:layout_margin="8dp"/>
+                android:layout_margin="12dp"
+                android:padding="10dp"/>
         </LinearLayout>
 
         <!-- Segunda linha de imagens -->
@@ -80,21 +88,24 @@
 
             <ImageView
                 android:id="@+id/option3"
-                android:layout_width="100dp"
+                android:layout_width="130dp"
                 android:layout_height="100dp"
                 android:src="@drawable/eu_quero"
-                android:background="@drawable/rounded_image"
+                android:background="@drawable/bg_at_blue"
                 android:contentDescription="Alternativa 3"
-                android:layout_margin="8dp"/>
+                android:layout_margin="12dp"
+                android:padding="10dp"/>
 
             <ImageView
                 android:id="@+id/option4"
-                android:layout_width="100dp"
+                android:layout_width="130dp"
                 android:layout_height="100dp"
                 android:src="@drawable/numero_tres"
-                android:background="@drawable/rounded_image"
+                android:background="@drawable/bg_at_blue"
                 android:contentDescription="Alternativa 4"
-                android:layout_margin="8dp"/>
+                android:layout_margin="12dp"
+                android:padding="10dp"
+                />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

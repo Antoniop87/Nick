@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BorderedText">
+        <item name="android:textColor">#FFFFFF</item> <!-- Cor do texto -->
+        <item name="android:shadowColor">#0000FF</item> <!-- Cor da borda -->
+        <item name="android:shadowDx">1</item> <!-- Posição horizontal da borda -->
+        <item name="android:shadowDy">1</item> <!-- Posição vertical da borda -->
+        <item name="android:shadowRadius">6</item> <!-- Espessura da borda -->
+    </style>
+</resources>
