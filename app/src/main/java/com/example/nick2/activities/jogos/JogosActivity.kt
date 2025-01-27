@@ -6,60 +6,46 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.ImageView
+import android.widget.LinearLayout
 import com.example.nick2.R
+import com.example.nick2.activities.jogos.atividades.AtividadesActivity
+import com.example.nick2.activities.jogos.audio.AtividadeAudioActivity
 import com.example.nick2.adapter.MyGridAdapter
 import com.example.nick2.model.Item
 
 class JogosActivity : AppCompatActivity() {
 
     lateinit var btn_fechar: ImageView
-    lateinit var gridView: GridView
-
+    lateinit var ll_fala: LinearLayout
+    lateinit var ll_atividades: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jogos)
         initViews()
-        configuraGridView()
         configuraButons()
 
     }
 
     private fun initViews() {
-        gridView = findViewById(R.id.gridView)
         btn_fechar = findViewById(R.id.btn_fechar)
-    }
-
-    private fun configuraGridView() {
-        val items = listOf(
-            Item("Acerte a fruta", R.drawable.uva),
-            Item("Soma", R.drawable.numero_tres),
-            Item("Comida", R.drawable.capa_macaco),
-            Item("O que o animal come?", R.drawable.onca),
-        )
-
-        val adapter = MyGridAdapter(this, items)
-        gridView.adapter = adapter
-
-        gridView.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
-                val item = items[position]
-
-
-                val intent = when (item.name) {
-                    "Acerte a fruta" -> Intent(this, AcerteAFrutaActivity::class.java)
-                    "Soma" -> Intent(this, SomaActivity::class.java)
-                    "O que o animal come?" -> Intent(this, AtividadeActivity::class.java)
-                    else -> Intent(this, NomeFrutaActivity::class.java)
-                }
-
-                startActivity(intent)
-            }
+        ll_fala = findViewById(R.id.ll_fala)
+        ll_atividades = findViewById(R.id.ll_atividades)
     }
 
     private fun configuraButons(){
         btn_fechar.setOnClickListener {
             finish()
+        }
+
+        ll_fala.setOnClickListener {
+            val i = Intent(this, AtividadeAudioActivity::class.java)
+            startActivity(i)
+        }
+
+        ll_atividades.setOnClickListener {
+            val i = Intent(this, AtividadesActivity::class.java)
+            startActivity(i)
         }
     }
 

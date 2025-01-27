@@ -1,32 +1,27 @@
-package com.example.nick2.activities.comunicacao
+package com.example.nick2.activities.jogos.audio
 
 import android.content.Intent
-import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.ImageView
 import com.example.nick2.R
-import com.example.nick2.activities.comunicacao.diaadia.DiaADiaActivity
-import com.example.nick2.activities.comunicacao.emocoes.EmocoesActivity
 import com.example.nick2.activities.jogos.AcerteAFrutaActivity
 import com.example.nick2.activities.jogos.AtividadeActivity
 import com.example.nick2.activities.jogos.NomeFrutaActivity
 import com.example.nick2.activities.jogos.SomaActivity
 import com.example.nick2.adapter.MyGridAdapter
-import com.example.nick2.adapter.MyGridAdapterAComunicacao
 import com.example.nick2.model.Item
-import com.example.nick2.model.ItemAudio
 
-class ComunicacaoActivity : AppCompatActivity() {
+class AtividadeAudioActivity : AppCompatActivity() {
 
-    lateinit var gridView: GridView
     lateinit var btn_fechar: ImageView
+    lateinit var gridView: GridView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_comunicacao)
+        setContentView(R.layout.activity_atividade_audio)
         initViews()
         configuraGridView()
         configuraButons()
@@ -39,25 +34,27 @@ class ComunicacaoActivity : AppCompatActivity() {
 
     private fun configuraGridView() {
         val items = listOf(
-            ItemAudio("Dia a dia", R.drawable.hi, R.raw.p_24973253_312),
-            ItemAudio("Emoções", R.drawable.pai, R.raw.p_24973272_337),
-
+            Item("Nome das frutas", R.drawable.uva),
+            Item("Soma", R.drawable.numero_tres),
+            Item("Comida", R.drawable.capa_macaco),
         )
 
-        val adapter = MyGridAdapterAComunicacao(this, items)
+        val adapter = MyGridAdapter(this, items)
         gridView.adapter = adapter
 
-        gridView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            val item = items[position]
+        gridView.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                val item = items[position]
 
 
-            val intent = when (item.name) {
-                "Dia a dia" -> Intent(this, DiaADiaActivity::class.java)
-                else -> Intent(this, EmocoesActivity::class.java)
+                val intent = when (item.name) {
+                    "Acerte a fruta" -> Intent(this, AcerteAFrutaActivity::class.java)
+                    "Soma" -> Intent(this, SomaActivity::class.java)
+                    else -> Intent(this, NomeFrutaActivity::class.java)
+                }
+
+                startActivity(intent)
             }
-
-            startActivity(intent)
-        }
     }
 
     private fun configuraButons(){

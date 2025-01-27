@@ -3,8 +3,8 @@
     <style name="BorderedText">
         <item name="android:textColor">#FFFFFF</item> <!-- Cor do texto -->
         <item name="android:shadowColor">#0000FF</item> <!-- Cor da borda -->
-        <item name="android:shadowDx">1</item> <!-- Posição horizontal da borda -->
-        <item name="android:shadowDy">1</item> <!-- Posição vertical da borda -->
-        <item name="android:shadowRadius">6</item> <!-- Espessura da borda -->
+        <item name="android:shadowDx">2</item> <!-- Posição horizontal da borda -->
+        <item name="android:shadowDy">2</item> <!-- Posição vertical da borda -->
+        <item name="android:shadowRadius">1</item> <!-- Espessura da borda -->
     </style>
 </resources>

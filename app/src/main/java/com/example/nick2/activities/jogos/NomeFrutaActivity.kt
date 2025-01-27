@@ -1,52 +1,55 @@
 package com.example.nick2.activities.jogos
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.viewpager2.widget.ViewPager2
 import com.example.nick2.R
+import com.example.nick2.adapter.AudioAdapter
+import com.example.nick2.adapter.WordItem
 
 class NomeFrutaActivity : AppCompatActivity() {
 
-    private lateinit var btn_fechar: ImageView
-    private lateinit var iv_uva:ImageView
-    private lateinit var iv_morango:ImageView
-    private lateinit var iv_banana:ImageView
+    private lateinit var viewPager: ViewPager2
+    private lateinit var adapter: AudioAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nome_fruta)
-        initViews()
-        configuraButtons()
 
+        val wordItems = listOf(
+            WordItem("Gato", R.drawable.onca),
+            WordItem("Cachorro", R.drawable.peixe),
+            WordItem("Pássaro", R.drawable.cachorro)
+        )
+
+        viewPager = findViewById(R.id.viewPager)
+        adapter = AudioAdapter(wordItems, this)
+        viewPager.adapter = adapter
+
+        viewPager.isUserInputEnabled = false // Desativa a rolagem manual
+
+        setupFragmentListeners()
     }
 
-    private fun initViews(){
-        btn_fechar = findViewById(R.id.btn_fechar)
-        iv_uva = findViewById(R.id.iv_uva)
-        iv_morango = findViewById(R.id.iv_morango)
-        iv_banana = findViewById(R.id.iv_banana)
-    }
-
-    private fun configuraButtons(){
-
-        iv_uva.setOnClickListener {
-            Toast.makeText(this@NomeFrutaActivity, "Uva", Toast.LENGTH_LONG).show()
+    private fun setupFragmentListeners() {
+        supportFragmentManager.setFragmentResultListener("wordMatched", this) { _, _ ->
+            val currentPosition = viewPager.currentItem
+            if (currentPosition < adapter.itemCount - 1) {
+                viewPager.currentItem = currentPosition + 1
+            } else {
+                Toast.makeText(this, "Parabéns! Você terminou!", Toast.LENGTH_SHORT).show()
+            }
         }
-
-        iv_morango.setOnClickListener {
-            Toast.makeText(this@NomeFrutaActivity, "morango", Toast.LENGTH_LONG).show()
-        }
-
-        iv_banana.setOnClickListener {
-            Toast.makeText(this@NomeFrutaActivity, "banana", Toast.LENGTH_LONG).show()
-        }
-
-        btn_fechar.setOnClickListener {
-            finish()
-        }
-
     }
 
 }

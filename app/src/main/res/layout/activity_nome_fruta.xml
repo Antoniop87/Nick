@@ -8,100 +8,13 @@
     android:background="@color/background"
     tools:context=".activities.jogos.NomeFrutaActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-
-        <ImageView
-            android:id="@+id/btn_fechar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/baseline_highlight_off_24"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:background="@drawable/moedas_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="100"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="20dp"
-                android:src="@drawable/moeda"/>
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Vamos pensar!"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:textSize="40sp"/>
-
-    <ImageView
-        android:layout_width="320dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:src="@drawable/macaco"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_image"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Qual dessas frutas é a favorita do macaco?"
-        android:gravity="center"
-        android:textSize="36sp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        />
-
-    <ImageView
-        android:id="@+id/iv_uva"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/uva"/>
-
-    <ImageView
-        android:id="@+id/iv_morango"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/morango"/>
-    <ImageView
-        android:id="@+id/iv_banana"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/banana"/>
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </LinearLayout>

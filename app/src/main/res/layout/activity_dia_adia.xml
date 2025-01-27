@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/background_main"
-    tools:context=".activities.comunicacao.ComunicacaoActivity">
+    tools:context=".activities.comunicacao.diaadia.DiaADiaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tool_bar"
@@ -44,31 +43,31 @@
 
 
         <!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:background="@drawable/moedas_background"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:layout_marginEnd="10dp"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:gravity="center_vertical"-->
+        <!--            android:background="@drawable/moedas_background"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="20dp"-->
-<!--                android:text="100"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textStyle="bold"/>-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:text="100"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="16sp"-->
+        <!--                android:textStyle="bold"/>-->
 
-<!--            <ImageView-->
-<!--                android:layout_width="40dp"-->
-<!--                android:layout_height="20dp"-->
-<!--                android:src="@drawable/moeda"/>-->
+        <!--            <ImageView-->
+        <!--                android:layout_width="40dp"-->
+        <!--                android:layout_height="20dp"-->
+        <!--                android:src="@drawable/moeda"/>-->
 
-<!--        </LinearLayout>-->
+        <!--        </LinearLayout>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -99,6 +98,5 @@
             />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

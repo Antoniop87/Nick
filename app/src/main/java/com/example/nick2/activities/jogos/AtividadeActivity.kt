@@ -68,7 +68,7 @@ class AtividadeActivity : AppCompatActivity() {
         )
 
         val viewPager: ViewPager2 = findViewById(R.id.viewPager)
-        val adapter = QuestionPagerAdapter(this, questions) // Aqui você passa 'this'
+        val adapter = QuestionPagerAdapter(this, questions)
         viewPager.adapter = adapter
 
     }
