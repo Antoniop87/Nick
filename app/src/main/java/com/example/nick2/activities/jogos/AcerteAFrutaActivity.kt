@@ -21,7 +21,6 @@ class AcerteAFrutaActivity : AppCompatActivity() {
 
         draggableTextView = findViewById(R.id.draggableTextView)
 
-        // Set the touch listener for initiating the drag
         draggableTextView.setOnTouchListener { view, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
                 val shadowBuilder = View.DragShadowBuilder(view)
@@ -33,7 +32,6 @@ class AcerteAFrutaActivity : AppCompatActivity() {
             }
         }
 
-        // Set the drag listener for handling the drag events
         draggableTextView.setOnDragListener { view, dragEvent ->
             when (dragEvent.action) {
                 DragEvent.ACTION_DRAG_STARTED -> {

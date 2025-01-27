@@ -1,7 +1,6 @@
 package com.example.nick2.activities.comunicacao
 
 import android.content.Intent
-import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
@@ -10,13 +9,7 @@ import android.widget.ImageView
 import com.example.nick2.R
 import com.example.nick2.activities.comunicacao.diaadia.DiaADiaActivity
 import com.example.nick2.activities.comunicacao.emocoes.EmocoesActivity
-import com.example.nick2.activities.jogos.AcerteAFrutaActivity
-import com.example.nick2.activities.jogos.AtividadeActivity
-import com.example.nick2.activities.jogos.NomeFrutaActivity
-import com.example.nick2.activities.jogos.SomaActivity
-import com.example.nick2.adapter.MyGridAdapter
 import com.example.nick2.adapter.MyGridAdapterAComunicacao
-import com.example.nick2.model.Item
 import com.example.nick2.model.ItemAudio
 
 class ComunicacaoActivity : AppCompatActivity() {

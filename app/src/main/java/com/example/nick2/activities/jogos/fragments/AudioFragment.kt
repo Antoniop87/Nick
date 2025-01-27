@@ -1,5 +1,6 @@
 package com.example.nick2.activities.jogos.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognitionListener
@@ -87,13 +88,12 @@ class AudioFragment : Fragment() {
                 if (matches != null && matches.isNotEmpty()) {
                     val spokenText = matches[0].lowercase()
                     if (spokenText == targetWord?.lowercase()) {
-                        Toast.makeText(requireContext(), "Acertou!", Toast.LENGTH_SHORT).show()
-                        onWordMatched?.invoke()
-                        onWordMatched()
+//                        Toast.makeText(requireContext(), "Acertou!", Toast.LENGTH_SHORT).show()
+                        chamaDialog(0)
                     } else {
 //                        Toast.makeText(requireContext(), "Tente novamente!", Toast.LENGTH_SHORT)
 //                            .show()
-                        chamaDialog()
+                        chamaDialog(1)
                     }
                 }
             }
@@ -101,7 +101,7 @@ class AudioFragment : Fragment() {
             override fun onError(error: Int) {
 //                Toast.makeText(requireContext(), "Erro no reconhecimento", Toast.LENGTH_SHORT)
 //                    .show()
-                chamaDialog()
+                chamaDialog(1)
             }
 
             override fun onReadyForSpeech(params: Bundle?) {
@@ -117,31 +117,53 @@ class AudioFragment : Fragment() {
         })
     }
 
-//    fun setOnWordMatchedListener(listener: () -> Unit) {
-//        onWordMatched = listener
-//    }
-
     private fun onWordMatched() {
-        // Aqui você envia o resultado para a Activity
+
         parentFragmentManager.setFragmentResult("wordMatched", Bundle())
     }
 
-    private fun chamaDialog() {
+    //o valor da resposta é 1 para resposta errada e 0 para resposta certa
+    @SuppressLint("ResourceAsColor")
+    private fun chamaDialog(valorResposta: Int) {
+
         val dialog = BottomSheetDialog(requireContext())
 
         val view = layoutInflater.inflate(R.layout.dialog_resposta_errada, null)
 
         val btnClose = view.findViewById<Button>(R.id.idBtnDismiss)
+        val resposta = view.findViewById<TextView>(R.id.idTVCourseName)
+        val icone = view.findViewById<ImageView>(R.id.idIVCourse)
 
-        btnClose.setOnClickListener {
-            dialog.dismiss()
+        if (valorResposta == 0){
+            resposta.text = "Certa resposta!"
+            resposta.setTextColor(resources.getColor(R.color.green))
+            icone.setImageResource(R.drawable.baseline_check_circle_24)
+            btnClose.text = "Proximo"
+            btnClose.setBackgroundColor(resources.getColor(R.color.green))
+            btnClose.setOnClickListener {
+                dialog.dismiss()
+                onWordMatched?.invoke()
+                onWordMatched()
+            }
+
+            dialog.setCancelable(false)
+
+            dialog.setContentView(view)
+
+            dialog.show()
+        } else {
+
+            btnClose.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.setCancelable(false)
+
+            dialog.setContentView(view)
+
+            dialog.show()
         }
 
-        dialog.setCancelable(false)
-
-        dialog.setContentView(view)
-
-        dialog.show()
     }
 
 

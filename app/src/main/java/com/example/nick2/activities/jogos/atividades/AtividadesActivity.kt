@@ -8,12 +8,12 @@ import android.widget.GridView
 import android.widget.ImageView
 import com.example.nick2.R
 import com.example.nick2.activities.jogos.AcerteAFrutaActivity
-import com.example.nick2.activities.jogos.AtividadeActivity
-import com.example.nick2.activities.jogos.NomeFrutaActivity
+import com.example.nick2.activities.jogos.audio.NomeFrutaActivity
 import com.example.nick2.activities.jogos.SomaActivity
 import com.example.nick2.adapter.MyGridAdapter
 import com.example.nick2.model.Item
 
+//essa activity lista as atividades
 class AtividadesActivity : AppCompatActivity() {
 
     lateinit var btn_fechar: ImageView
@@ -36,8 +36,9 @@ class AtividadesActivity : AppCompatActivity() {
     private fun configuraGridView() {
         val items = listOf(
             Item("O que o animal come?", R.drawable.uva),
-            Item("Soma", R.drawable.numero_tres),
-            Item("Comida", R.drawable.capa_macaco),
+            Item("Conhecendo os animais", R.drawable.leao),
+            Item("Cores", R.drawable.paleta),
+            Item("Formas", R.drawable.formas),
         )
 
         val adapter = MyGridAdapter(this, items)
@@ -49,10 +50,11 @@ class AtividadesActivity : AppCompatActivity() {
 
 
                 val intent = when (item.name) {
-                    "Acerte a fruta" -> Intent(this, AcerteAFrutaActivity::class.java)
-                    "Soma" -> Intent(this, SomaActivity::class.java)
+                    "Cores" -> Intent(this, CoresActivity::class.java)
+                    "Conhecendo os animais" -> Intent(this, SobreAnimaisActivity::class.java)
                     "O que o animal come?" -> Intent(this, AtividadeActivity::class.java)
-                    else -> Intent(this, NomeFrutaActivity::class.java)
+                    "Formas" -> Intent(this, FormasActivity::class.java)
+                    else -> Intent(this, FormasActivity::class.java)
                 }
 
                 startActivity(intent)

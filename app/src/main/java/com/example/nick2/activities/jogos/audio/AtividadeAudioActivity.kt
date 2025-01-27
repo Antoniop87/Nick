@@ -7,10 +7,6 @@ import android.widget.AdapterView
 import android.widget.GridView
 import android.widget.ImageView
 import com.example.nick2.R
-import com.example.nick2.activities.jogos.AcerteAFrutaActivity
-import com.example.nick2.activities.jogos.AtividadeActivity
-import com.example.nick2.activities.jogos.NomeFrutaActivity
-import com.example.nick2.activities.jogos.SomaActivity
 import com.example.nick2.adapter.MyGridAdapter
 import com.example.nick2.model.Item
 
@@ -35,8 +31,9 @@ class AtividadeAudioActivity : AppCompatActivity() {
     private fun configuraGridView() {
         val items = listOf(
             Item("Nome das frutas", R.drawable.uva),
-            Item("Soma", R.drawable.numero_tres),
-            Item("Comida", R.drawable.capa_macaco),
+            Item("Nome dos animais", R.drawable.urso),
+            Item("Nome das comidas", R.drawable.pao),
+            Item("Nome dos objetos", R.drawable.livros),
         )
 
         val adapter = MyGridAdapter(this, items)
@@ -48,8 +45,9 @@ class AtividadeAudioActivity : AppCompatActivity() {
 
 
                 val intent = when (item.name) {
-                    "Acerte a fruta" -> Intent(this, AcerteAFrutaActivity::class.java)
-                    "Soma" -> Intent(this, SomaActivity::class.java)
+                    "Nome dos animais" -> Intent(this, AnimaisAudioActivity::class.java)
+                    "Nome das comidas" -> Intent(this, ComidaAudioActivity::class.java)
+                    "Nome dos objetos" -> Intent(this, ObjetosAudioActivity::class.java)
                     else -> Intent(this, NomeFrutaActivity::class.java)
                 }
 

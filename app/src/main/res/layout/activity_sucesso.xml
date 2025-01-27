@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:text="Você ganhou 10 moedas!"
         android:gravity="center"
+        android:visibility="invisible"
         android:textColor="@color/white"
         android:fontFamily="sans-serif"
         android:textStyle="bold"

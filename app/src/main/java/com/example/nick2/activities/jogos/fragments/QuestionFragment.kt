@@ -1,11 +1,13 @@
 package com.example.nick2.activities.jogos.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -14,6 +16,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.nick2.R
 import com.example.nick2.activities.jogos.SucessoActivity
 import com.example.nick2.model.Question
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,10 +71,11 @@ class QuestionFragment : Fragment() {
             imageView.setOnClickListener {
                 if (index == question.correctAnswer) {
                     count++
-                    goToNextQuestion()
+                    imageView.setBackgroundResource(R.drawable.bg_at_green)
+                    chamaDialog(0)
                 } else {
                     imageView.setBackgroundResource(R.drawable.bg_at_red)
-                    Toast.makeText(requireContext(), "Resposta errada!", Toast.LENGTH_SHORT).show()
+                    chamaDialog(1)
                 }
             }
         }
@@ -114,5 +118,48 @@ class QuestionFragment : Fragment() {
                 }
             }
         }
+    }
+
+    //o valor da resposta é 1 para resposta errada e 0 para resposta certa
+    @SuppressLint("ResourceAsColor")
+    private fun chamaDialog(valorResposta: Int) {
+
+        val dialog = BottomSheetDialog(requireContext())
+
+        val view = layoutInflater.inflate(R.layout.dialog_resposta_errada, null)
+
+        val btnClose = view.findViewById<Button>(R.id.idBtnDismiss)
+        val resposta = view.findViewById<TextView>(R.id.idTVCourseName)
+        val icone = view.findViewById<ImageView>(R.id.idIVCourse)
+
+        if (valorResposta == 0){
+            resposta.text = "Certa resposta!"
+            resposta.setTextColor(resources.getColor(R.color.green))
+            icone.setImageResource(R.drawable.baseline_check_circle_24)
+            btnClose.text = "Proximo"
+            btnClose.setBackgroundColor(resources.getColor(R.color.green))
+            btnClose.setOnClickListener {
+                dialog.dismiss()
+                goToNextQuestion()
+            }
+
+            dialog.setCancelable(false)
+
+            dialog.setContentView(view)
+
+            dialog.show()
+        } else {
+
+            btnClose.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.setCancelable(false)
+
+            dialog.setContentView(view)
+
+            dialog.show()
+        }
+
     }
 }
