@@ -32,11 +32,12 @@ class DiaADiaActivity : AppCompatActivity() {
     private fun configuraGridView() {
         val items = listOf(
             ItemAudio("Oi", R.drawable.hi, R.raw.p_24973253_312),
-            ItemAudio("Papai", R.drawable.pai, R.raw.p_24973272_337),
-            ItemAudio("Abraço", R.drawable.abraco, R.raw.p_24973554_670),
-            ItemAudio("Mãe", R.drawable.mae, R.raw.p_24973547_660),
             ItemAudio("Eu quero", R.drawable.eu_quero, R.raw.p_24973571_697),
             ItemAudio("Não quero", R.drawable.nao_quero, R.raw.p_24973564_689),
+            ItemAudio("Pegue", R.drawable.pegue, R.raw.p_40435784_140),
+            ItemAudio("Bom", R.drawable.legal2semfundo, R.raw.p_40435804_166),
+            ItemAudio("Gostei", R.drawable.gostei, R.raw.p_40435766_119),
+            ItemAudio("Faço", R.drawable.faco, R.raw.p_40435792_153),
 
             )
 

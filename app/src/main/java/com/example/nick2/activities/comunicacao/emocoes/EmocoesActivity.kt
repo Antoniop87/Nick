@@ -31,12 +31,14 @@ class EmocoesActivity : AppCompatActivity() {
 
     private fun configuraGridView() {
         val items = listOf(
-            ItemAudio("Oi", R.drawable.hi, R.raw.p_24973253_312),
             ItemAudio("Papai", R.drawable.pai, R.raw.p_24973272_337),
+            ItemAudio("Mamãe", R.drawable.mae, R.raw.p_40437060_672),
+            ItemAudio("Vovó", R.drawable.vovoo, R.raw.p_40437081_685),
+            ItemAudio("Vovô", R.drawable.vovo, R.raw.p_40437094_695),
+            ItemAudio("Dormir", R.drawable.dormir, R.raw.p_40437140_736),
+            ItemAudio("Te amo", R.drawable.euteamo, R.raw.p_40437112_708),
             ItemAudio("Abraço", R.drawable.abraco, R.raw.p_24973554_670),
-            ItemAudio("Mãe", R.drawable.mae, R.raw.p_24973547_660),
-            ItemAudio("Eu quero", R.drawable.eu_quero, R.raw.p_24973571_697),
-            ItemAudio("Não quero", R.drawable.nao_quero, R.raw.p_24973564_689),
+            ItemAudio("Feliz", R.drawable.capa_sucesso, R.raw.p_40437154_750),
 
             )
 
