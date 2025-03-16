@@ -10,7 +10,7 @@ import com.example.nick2.R
 import com.example.nick2.adapter.QuestionPagerAdapter
 import com.example.nick2.model.Question
 
-//essa activity configura o fragment da atividade
+//essa activity configura o fragment da atividade de comida do animal
 class AtividadeActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class AtividadeActivity : AppCompatActivity() {
             Question(
                 text = "Qual é a comida da galinha?",
                 imagemPergunta = R.drawable.imagem_galinha,
-                correctAnswer = 3,
+                correctAnswer = 2,
                 imageOptions = listOf(R.drawable.grama, R.drawable.abacaxi, R.drawable.milho, R.drawable.melancia)
             ),
             Question(

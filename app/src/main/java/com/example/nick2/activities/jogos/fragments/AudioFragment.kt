@@ -1,11 +1,14 @@
 package com.example.nick2.activities.jogos.fragments
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +17,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.nick2.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -33,6 +38,7 @@ class AudioFragment : Fragment() {
     private var targetWord: String? = null
     private var imageResId: Int? = null
     private var onWordMatched: (() -> Unit)? = null
+    private val REQUEST_CODE_PERMISSION = 1
 
     companion object {
         private const val ARG_WORD = "arg_word"
@@ -66,7 +72,17 @@ class AudioFragment : Fragment() {
         setupSpeechRecognizer()
 
         startButton.setOnClickListener {
-            speechRecognizer.startListening(recognizerIntent)
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.RECORD_AUDIO)
+                == PackageManager.PERMISSION_GRANTED) {
+                speechRecognizer.startListening(recognizerIntent)
+            } else {
+                // Solicitar permissão de microfone
+                ActivityCompat.requestPermissions(
+                    requireActivity(),
+                    arrayOf(Manifest.permission.RECORD_AUDIO),
+                    REQUEST_CODE_PERMISSION
+                )
+            }
         }
 
         return view
@@ -99,8 +115,19 @@ class AudioFragment : Fragment() {
             }
 
             override fun onError(error: Int) {
-//                Toast.makeText(requireContext(), "Erro no reconhecimento", Toast.LENGTH_SHORT)
-//                    .show()
+                val errorMessage = when (error) {
+                    SpeechRecognizer.ERROR_AUDIO -> "Erro de áudio"
+                    SpeechRecognizer.ERROR_CLIENT -> "Erro do cliente"
+                    SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "Permissões insuficientes"
+                    SpeechRecognizer.ERROR_NETWORK -> "Erro de rede"
+                    SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "Tempo de rede esgotado"
+                    SpeechRecognizer.ERROR_NO_MATCH -> "Nenhuma correspondência"
+                    SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "Reconhecedor ocupado"
+                    SpeechRecognizer.ERROR_SERVER -> "Erro no servidor"
+                    SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "Tempo de fala esgotado"
+                    else -> "Erro desconhecido: $error"
+                }
+                Log.d("ERRO", errorMessage)
                 chamaDialog(1)
             }
 
@@ -166,6 +193,21 @@ class AudioFragment : Fragment() {
 
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode == REQUEST_CODE_PERMISSION) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permissão concedida, inicie o reconhecimento de fala
+                speechRecognizer.startListening(recognizerIntent)
+            } else {
+                // Permissão negada
+                Toast.makeText(requireContext(), "Permissão de microfone necessária", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()

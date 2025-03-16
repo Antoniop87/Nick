@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Você acertou, parabens!"
+        android:text="Você concluiu, parabens!"
         android:gravity="center"
         android:textColor="@color/white"
         android:fontFamily="sans-serif"
